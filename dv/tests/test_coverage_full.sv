@@ -74,6 +74,7 @@ class test_coverage_full extends base_test;
         tc_sb_aad.data_in_blocks.push_back({32'(p), 32'(p+1), 32'(p+2), 32'(p+3)});
       end
       tc_sb_aad.tag_ref = 128'h0123456789abcdef0123456789abcdef;
+      tc_sb_aad.delay_tag_ref = 1'b1; // Trigger WAIT_H_CAL -> WAIT_TAG_REF (2 => 3)
       env.gen.send_directed(tc_sb_aad);
     end
 

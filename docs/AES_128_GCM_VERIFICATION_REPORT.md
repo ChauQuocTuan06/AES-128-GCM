@@ -131,10 +131,10 @@ Module `dv/env/aes_gcm_assertions.sv` được tích hợp trực tiếp vào to
 ##############################################################
 #             FSM STATE & TRANSITION COVERAGE REPORT         #
 ##############################################################
-#  Total FSM State Transition Samples: 261
+#  Total FSM State Transition Samples: 262
 #    1. FSM All 11 States    (IDLE..FINISH)       : 100.00 %   #
-#    2. FSM Transitions      (Branch Paths)       :  94.12 %   #
-#  >>> OVERALL FSM COVERAGE SCORE                 :  97.06 %   #
+#    2. FSM Transitions      (Branch Paths)       : 100.00 %   #
+#  >>> OVERALL FSM COVERAGE SCORE                 : 100.00 %   #
 ##############################################################
 ```
 
@@ -151,9 +151,24 @@ Toàn bộ **11 trạng thái** FSM đã được duyệt qua 100%:
 - `VERIFY_PASS (9)`
 - `FINISH (10)`
 
-16 trên 17 cung chuyển trạng thái đã được kích hoạt, bao gồm cả hai cung đặc biệt của tính năng Key Reuse:
-- `IDLE -> WAIT_AAD` (Mã hóa khi dùng lại Key cũ)
-- `IDLE -> WAIT_TAG_REF` (Giải mã khi dùng lại Key cũ)
+Toàn bộ **17 trên 17 cung chuyển trạng thái (100.00%)** đã được kích hoạt đầy đủ:
+- `IDLE -> KEY_EXPANSION`
+- `IDLE -> WAIT_AAD` (Key Reuse trong Encrypt)
+- `IDLE -> WAIT_TAG_REF` (Key Reuse trong Decrypt)
+- `KEY_EXPANSION -> WAIT_H_CAL`
+- `WAIT_H_CAL -> WAIT_AAD` (Decrypt/Encrypt khi tag_ref đã nạp sớm)
+- `WAIT_H_CAL -> WAIT_TAG_REF` (Decrypt khi tag_ref nạp trễ - sau khi tính xong H)
+- `WAIT_TAG_REF -> WAIT_AAD`
+- `WAIT_AAD -> LOAD_AAD`
+- `WAIT_AAD -> WAIT_DATA` (Trường hợp không có AAD hoặc 1 block AAD)
+- `LOAD_AAD -> WAIT_DATA`
+- `WAIT_DATA -> LOAD_DATA`
+- `WAIT_DATA -> WAIT_PROCESS_FINISH` (Trường hợp 1 block dữ liệu)
+- `LOAD_DATA -> WAIT_PROCESS_FINISH`
+- `WAIT_PROCESS_FINISH -> VERIFY_PASS` (Chế độ Decrypt)
+- `WAIT_PROCESS_FINISH -> FINISH` (Chế độ Encrypt)
+- `VERIFY_PASS -> FINISH`
+- `FINISH -> IDLE`
 
 ---
 

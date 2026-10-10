@@ -255,7 +255,14 @@ class driver;
       end
       drive_IV(tr);
       if (tr.mode == 1'b1) begin
-        drive_tag_ref(tr);
+        if (tr.delay_tag_ref) begin
+          $display("[DRIVER] DELAY_TAG_REF active: Black-box delay 25 cycles before driving TAG_REF...");
+          repeat (25) @(vif.driver_cb);
+          $display("[DRIVER] Black-box delay elapsed! Now loading TAG_REF...");
+          drive_tag_ref(tr);
+        end else begin
+          drive_tag_ref(tr);
+        end
       end
       drive_AAD(tr);
       drive_data(tr);

@@ -28,6 +28,8 @@ class transaction;
   bit skip_key     = 1'b0;
   // Cờ báo hiệu giả lập backpressure / delay khi nạp dữ liệu
   bit inject_delay = 1'b0;
+  // Cờ báo hiệu hoãn nạp tag_ref để kích hoạt transition WAIT_H_CAL -> WAIT_TAG_REF
+  bit delay_tag_ref = 1'b0;
 
   // =========================================================
   // 2. DUT RESPONSE (Phản hồi thu thập từ Monitor)
@@ -66,6 +68,7 @@ class transaction;
     this.is_x_test            = tr.is_x_test;
     this.skip_key             = tr.skip_key;
     this.inject_delay         = tr.inject_delay;
+    this.delay_tag_ref        = tr.delay_tag_ref;
   endfunction
 
   // =========================================================
