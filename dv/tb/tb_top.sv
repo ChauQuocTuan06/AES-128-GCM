@@ -81,12 +81,39 @@ module tb_top;
              $time, u_dut.cu.Current.name(), u_dut.cu.Current, u_dut.cu.Next, u_dut.cu.start, u_dut.cu.H_loaded, u_dut.cu.IV_loaded, u_dut.cu.no_AAD, u_dut.cu.AAD_ready, u_dut.cu.data_ready);
   end
 
-  // 4. Test Execution Block (Dynamic Test Selection via +TESTNAME)
+  // 4. SystemVerilog Assertions (SVA) Module Instantiation
+  aes_gcm_assertions u_sva (
+    .clk          (clk),
+    .rst_n        (vif.rst_n),
+    .load_key     (vif.load_key),
+    .key_ready    (vif.key_ready),
+    .load_IV      (vif.load_IV),
+    .IV_ready     (vif.IV_ready),
+    .load_tag_ref (vif.load_tag_ref),
+    .tag_ref_ready(vif.tag_ref_ready),
+    .load_AAD     (vif.load_AAD),
+    .AAD_ready    (vif.AAD_ready),
+    .load_data    (vif.load_data),
+    .data_ready   (vif.data_ready),
+    .mode         (vif.mode),
+    .finish       (vif.finish),
+    .tag_valid    (vif.tag_valid),
+    .verify_done  (vif.verify_done),
+    .verify_pass  (vif.verify_pass),
+    .data_valid   (vif.data_valid),
+    .cu_state     (vif.cu_state)
+  );
+
+  // 5. Test Execution Block (Dynamic Test Selection via +TESTNAME)
   initial begin : test_runner
     string                 testname;
     base_test              t;
     test_nist_kat          t_kat;
     test_coverage_full     t_cov;
+    test_reuse_key         t_reuse;
+    test_enc_dec_chain     t_chain;
+    test_backpressure      t_bp;
+    test_ctr_overflow      t_max_iv;
     test_decryption_errors t_dec;
     test_x_propagation     t_x;
     test_reset             t_rst;
@@ -109,6 +136,22 @@ module tb_top;
       "test_coverage_full": begin
         t_cov = new("test_coverage_full", vif);
         t = t_cov;
+      end
+      "test_reuse_key": begin
+        t_reuse = new("test_reuse_key", vif);
+        t = t_reuse;
+      end
+      "test_enc_dec_chain": begin
+        t_chain = new("test_enc_dec_chain", vif);
+        t = t_chain;
+      end
+      "test_backpressure": begin
+        t_bp = new("test_backpressure", vif);
+        t = t_bp;
+      end
+      "test_ctr_overflow": begin
+        t_max_iv = new("test_ctr_overflow", vif);
+        t = t_max_iv;
       end
       "test_decryption_errors": begin
         t_dec = new("test_decryption_errors", vif);

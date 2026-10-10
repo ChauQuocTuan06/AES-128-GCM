@@ -8,5 +8,6 @@
 
 ../dv/env/interface.sv
 ../dv/env/env_pkg.sv
+../dv/env/aes_gcm_assertions.sv
 ../dv/tests/test_pkg.sv
 ../dv/tb/tb_top.sv

@@ -8,8 +8,8 @@
 
 class test_coverage_full extends base_test;
 
-  function new(string name = "test_coverage_full", virtual data_if vif);
-    super.new(name, vif);
+  function new(string name = "test_coverage_full", virtual data_if vif, environment env_in = null);
+    super.new(name, vif, env_in);
   endfunction
 
   virtual task do_stimulus();
@@ -44,7 +44,7 @@ class test_coverage_full extends base_test;
       tc_ones = new();
       tc_ones.mode = 1'b0; // Encrypt
       tc_ones.cipher_key = 128'hffffffffffffffffffffffffffffffff;
-      tc_ones.IV = 96'habcdef0123456789deadbeef;
+      tc_ones.IV = 96'hffffffffffffffffffffffff; // ALL_ONES_IV bin!
       tc_ones.aad_blocks.delete();
       for (int a = 0; a < 5; a++) begin
         tc_ones.aad_blocks.push_back({32'(a+1), 32'(a+2), 32'(a+3), 32'(a+4)});

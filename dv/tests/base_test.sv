@@ -11,10 +11,13 @@ class base_test;
   environment     env;
   string          test_name;
 
-  function new(string name = "base_test", virtual data_if vif);
+  function new(string name = "base_test", virtual data_if vif, environment env_in = null);
     this.test_name = name;
     this.vif       = vif;
-    this.env       = new(vif);
+    if (env_in != null)
+      this.env     = env_in;
+    else
+      this.env     = new(vif);
   endfunction
 
   // Pre-test execution: System Reset and start background tasks
@@ -28,6 +31,7 @@ class base_test;
       env.drv.run();
       env.mon.run();
       env.scb.run();
+      env.run_fsm_cov();
     join_none
   endtask
 

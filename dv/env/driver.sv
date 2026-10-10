@@ -151,6 +151,9 @@ class driver;
     `drv_if.AAD_last <= 1'b0;
 
     for (int i = 0; i < tr.aad_blocks.size(); i++) begin
+      if (tr.inject_delay) begin
+        repeat ($urandom_range(1, 3)) @(vif.driver_cb);
+      end
       while (`drv_if.AAD_ready !== 1'b1)
         @(vif.driver_cb);
 
@@ -194,6 +197,9 @@ class driver;
     `drv_if.no_AAD <= 1'b0;
 
     for (int i = 0; i < tr.data_in_blocks.size(); i++) begin
+      if (tr.inject_delay) begin
+        repeat ($urandom_range(1, 3)) @(vif.driver_cb);
+      end
       `drv_if.data_in <= tr.data_in_blocks[i];
 
       while (`drv_if.data_ready !== 1'b1)
@@ -236,12 +242,17 @@ class driver;
 
       $display("");
       $display("========================================================");
-      $display("[DRIVER] NEW AES-GCM TRANSACTION (Mode: %s)", tr.mode ? "DECRYPT" : "ENCRYPT");
+      $display("[DRIVER] NEW AES-GCM TRANSACTION (Mode: %s, ReuseKey: %0b)",
+               tr.mode ? "DECRYPT" : "ENCRYPT", tr.skip_key);
       $display("========================================================");
       tr.display("DRIVER");
 
       `drv_if.mode <= tr.mode;
-      drive_key(tr);
+      if (!tr.skip_key) begin
+        drive_key(tr);
+      end else begin
+        $display("[DRIVER] REUSING CACHED KEY (Skipping drive_key)...");
+      end
       drive_IV(tr);
       if (tr.mode == 1'b1) begin
         drive_tag_ref(tr);

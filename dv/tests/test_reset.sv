@@ -9,8 +9,8 @@
 
 class test_reset extends base_test;
 
-  function new(string name = "test_reset", virtual data_if vif);
-    super.new(name, vif);
+  function new(string name = "test_reset", virtual data_if vif, environment env_in = null);
+    super.new(name, vif, env_in);
   endfunction
 
   virtual task do_stimulus();

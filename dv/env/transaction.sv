@@ -23,7 +23,11 @@ class transaction;
   rand logic [127:0] tag_ref;
 
   // Cờ báo hiệu testcase tiêm giá trị X (X-Propagation Test)
-  bit is_x_test = 1'b0;
+  bit is_x_test    = 1'b0;
+  // Cờ báo hiệu tái sử dụng Key (không phát xung load_key)
+  bit skip_key     = 1'b0;
+  // Cờ báo hiệu giả lập backpressure / delay khi nạp dữ liệu
+  bit inject_delay = 1'b0;
 
   // =========================================================
   // 2. DUT RESPONSE (Phản hồi thu thập từ Monitor)
@@ -60,6 +64,8 @@ class transaction;
     this.CTR_counter_overflow = tr.CTR_counter_overflow;
     this.finish               = tr.finish;
     this.is_x_test            = tr.is_x_test;
+    this.skip_key             = tr.skip_key;
+    this.inject_delay         = tr.inject_delay;
   endfunction
 
   // =========================================================

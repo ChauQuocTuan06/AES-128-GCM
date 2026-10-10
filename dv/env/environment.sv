@@ -40,6 +40,13 @@ class environment;
     drv.reset();
   endtask
 
+  // Tiến trình nền giám sát và thu thập FSM Coverage
+  task run_fsm_cov();
+    forever @(vif.cu_state) begin
+      cov.sample_fsm(vif.cu_state);
+    end
+  endtask
+
   // Giai đoạn chạy mô phỏng chính: Chạy song song Generator, Driver, Monitor, Scoreboard
   task test();
     $display("[ENV] Running Test Phase...");

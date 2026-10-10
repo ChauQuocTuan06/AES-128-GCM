@@ -10,13 +10,15 @@ class monitor;
 
   virtual data_if vif;
   mailbox mon2scb;
+  logic [127:0] cached_key;
 
   function new(
     virtual data_if vif,
     mailbox mon2scb
   );
-    this.vif     = vif;
-    this.mon2scb = mon2scb;
+    this.vif        = vif;
+    this.mon2scb    = mon2scb;
+    this.cached_key = 128'h0;
   endfunction
 
   task run();
@@ -31,21 +33,33 @@ class monitor;
       tr.data_in_blocks.delete();
       tr.data_out_blocks.delete();
 
-      // STEP 1 & 2: Wait for transaction start and capture KEY
-      while (`MON_IF.load_key !== 1'b1)
+      // STEP 1 & 2: Wait for transaction start (either load_key or load_IV for key reuse)
+      while (`MON_IF.load_key !== 1'b1 && `MON_IF.load_IV !== 1'b1)
         @(vif.monitor_cb);
 
       tr.mode = `MON_IF.mode;
-      tr.cipher_key = `MON_IF.cipher_key;
-      $display("[MONITOR] NEW TRANSACTION | MODE = %s", tr.mode ? "DECRYPT" : "ENCRYPT");
-      $display("[MONITOR] Captured CIPHER_KEY = %032h", tr.cipher_key);
+      if (`MON_IF.load_key === 1'b1) begin
+        tr.cipher_key = `MON_IF.cipher_key;
+        cached_key = tr.cipher_key;
+        tr.skip_key = 1'b0;
+        $display("[MONITOR] NEW TRANSACTION | MODE = %s", tr.mode ? "DECRYPT" : "ENCRYPT");
+        $display("[MONITOR] Captured CIPHER_KEY = %032h", tr.cipher_key);
 
-      // STEP 3: Capture IV
-      while (`MON_IF.load_IV !== 1'b1)
-        @(vif.monitor_cb);
+        // STEP 3: Capture IV
+        while (`MON_IF.load_IV !== 1'b1)
+          @(vif.monitor_cb);
 
-      tr.IV = `MON_IF.IV;
-      $display("[MONITOR] Captured IV = %024h", tr.IV);
+        tr.IV = `MON_IF.IV;
+        $display("[MONITOR] Captured IV = %024h", tr.IV);
+      end else begin
+        // Key reuse transaction
+        tr.cipher_key = cached_key;
+        tr.skip_key = 1'b1;
+        tr.IV = `MON_IF.IV;
+        $display("[MONITOR] NEW TRANSACTION (REUSING KEY) | MODE = %s", tr.mode ? "DECRYPT" : "ENCRYPT");
+        $display("[MONITOR] Cached CIPHER_KEY = %032h", tr.cipher_key);
+        $display("[MONITOR] Captured IV = %024h", tr.IV);
+      end
 
       // STEP 4: In DECRYPT mode, capture TAG_REF
       if (tr.mode == 1'b1) begin
