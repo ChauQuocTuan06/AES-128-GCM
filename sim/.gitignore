@@ -1,0 +1,10 @@
+# QuestaSim / ModelSim generated files
+work/
+transcript
+*.wlf
+*.log
+*.vstf
+covhtmlreport/
+modelsim.ini
+vsim.dbg
+*.ucdb

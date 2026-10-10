@@ -1,0 +1,33 @@
+# ==============================================================================
+# Git Ignore for AES-128-GCM Digital IC Project
+# ==============================================================================
+
+# Simulation & QuestaSim/ModelSim Generated Files
+sim/work/
+sim/transcript
+sim/*.wlf
+sim/*.log
+sim/*.vstf
+sim/covhtmlreport/
+sim/modelsim.ini
+sim/vsim.dbg
+sim/*.ucdb
+*.wlf
+*.vcd
+transcript
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary & Dump files
+dump_edaplayground/
+scratch_*
+_repo_temp/
+
+# OS & Editor generated files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

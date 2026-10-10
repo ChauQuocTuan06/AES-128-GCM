@@ -1,0 +1,766 @@
+# do ../scripts/run.do
+# Info: Using existing work library...
+# ==========================================
+# Compiling RTL Files...
+# ==========================================
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 01:14:39 on Oct 10,2026
+# vlog -sv -timescale 1ns/1ps ../rtl/aes_128_gcm_all.sv 
+# -- Compiling module AffineTransform
+# -- Compiling module Imp
+# -- Compiling module ImpInv
+# -- Compiling module ModuleS
+# -- Compiling module ModuleC
+# -- Compiling module ModuleX
+# -- Compiling module Inv
+# -- Compiling module MultiplicativeInv
+# -- Compiling module SBox
+# -- Compiling module AddRcon
+# -- Compiling module RotWord
+# -- Compiling module SubWord
+# -- Compiling module GFunction
+# -- Compiling module Counter
+# -- Compiling module KeyExpansion
+# -- Compiling module CTR_counter
+# -- Compiling module IV_register
+# -- Compiling module J0_register
+# -- Compiling module counter_block_generator
+# -- Compiling module output_unit
+# -- Compiling module type_generator
+# -- Compiling module counter_generator
+# -- Compiling module FIFO_memory
+# -- Compiling module Read_pointer
+# -- Compiling module Write_pointer
+# -- Compiling module FIFO
+# -- Compiling module MUL_MixColumns
+# -- Compiling module MixCol
+# -- Compiling module MixColumns
+# -- Compiling module AddRoundKeys
+# -- Compiling module AES_register
+# -- Compiling module ShiftRows
+# -- Compiling module SubBytes
+# -- Compiling module AES_first_round
+# -- Compiling module AES_round
+# -- Compiling module AES_last_round
+# -- Compiling module AES_encryption
+# ** Warning: ../rtl/aes_128_gcm_all.sv(949): (vlog-13314) Defaulting port 'round_key' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Compiling module AES_CTR
+# -- Compiling module X8
+# -- Compiling module X16
+# -- Compiling module X32
+# -- Compiling module X64
+# -- Compiling module X128
+# -- Compiling module ReductionBlock
+# -- Compiling module GF128bitMultiply
+# -- Compiling module GHASH
+# -- Compiling module LengthBlockCounter
+# -- Compiling module TagProcessing
+# -- Compiling module CU
+# -- Compiling module AES_GCM
+# 
+# Top level modules:
+# 	AES_GCM
+# End time: 01:14:39 on Oct 10,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# ==========================================
+# Compiling DV Files...
+# ==========================================
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 01:14:40 on Oct 10,2026
+# vlog -sv -timescale 1ns/1ps -f ../scripts/filelist_dv.f 
+# -- Compiling interface data_if
+# -- Compiling package env_pkg
+# -- Compiling package tb_top_sv_unit
+# -- Importing package env_pkg
+# -- Compiling module tb_top
+# 
+# Top level modules:
+# 	tb_top
+# End time: 01:14:40 on Oct 10,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ==========================================
+# Compilation Finished Successfully!
+# ==========================================
+# vsim -voptargs=""+acc"" work.tb_top 
+# Start time: 01:14:40 on Oct 10,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "CU(fast)".
+# ** Warning: ../rtl/aes_128_gcm_all.sv(949): (vopt-13314) Defaulting port 'round_key' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# //  Questa Sim-64
+# //  Version 10.7c win64 Aug 18 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.data_if(fast)
+# Loading work.env_pkg(fast)
+# Loading work.tb_top_sv_unit(fast)
+# Loading work.tb_top(fast)
+# Loading work.data_if(fast)
+# Loading work.AES_GCM(fast)
+# Loading work.AES_CTR(fast)
+# Loading work.FIFO(fast)
+# Loading work.Write_pointer(fast)
+# Loading work.Read_pointer(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.KeyExpansion(fast)
+# Loading work.Counter(fast)
+# Loading work.GFunction(fast)
+# Loading work.RotWord(fast)
+# Loading work.SubWord(fast)
+# Loading work.SBox(fast)
+# Loading work.MultiplicativeInv(fast)
+# Loading work.Imp(fast)
+# Loading work.ModuleS(fast)
+# Loading work.ModuleC(fast)
+# Loading work.ModuleX(fast)
+# Loading work.Inv(fast)
+# Loading work.ImpInv(fast)
+# Loading work.AffineTransform(fast)
+# Loading work.AddRcon(fast)
+# Loading work.counter_generator(fast)
+# Loading work.CTR_counter(fast)
+# Loading work.IV_register(fast)
+# Loading work.counter_block_generator(fast)
+# Loading work.J0_register(fast)
+# Loading work.type_generator(fast)
+# Loading work.output_unit(fast)
+# Loading work.AES_encryption(fast)
+# Loading work.AES_first_round(fast)
+# Loading work.AES_register(fast)
+# Loading work.AddRoundKeys(fast)
+# Loading work.AES_round(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.MixColumns(fast)
+# Loading work.MixCol(fast)
+# Loading work.MUL_MixColumns(fast)
+# Loading work.AES_last_round(fast)
+# Loading work.TagProcessing(fast)
+# Loading work.LengthBlockCounter(fast)
+# Loading work.GHASH(fast)
+# Loading work.GF128bitMultiply(fast)
+# Loading work.X128(fast)
+# Loading work.X64(fast)
+# Loading work.X32(fast)
+# Loading work.X16(fast)
+# Loading work.X8(fast)
+# Loading work.ReductionBlock(fast)
+# Loading work.CU(fast)
+# ==================================================================
+#   STARTING AES-128-GCM SYSTEMVERILOG VERIFICATION ENVIRONMENT    
+# ==================================================================
+# [ENV] Running Pre-Test Phase: System Reset...
+# 
+# ========================================================
+# [DRIVER] RESET STARTED
+# ========================================================
+# [FSM TRACE @ 0 ps] CU Current=IDLE (0), Next=0 | start=x, H_loaded=0, IV_loaded=0, no_AAD=x, AAD_ready=0, data_ready=0
+# ========================================================
+# [DRIVER] RESET COMPLETED
+# ========================================================
+# 
+# >>> [TB] RUNNING TEST 1: NIST TC2 ENCRYPTION...
+# [GENERATOR] Sending directed transaction (Mode: ENCRYPT)
+# 
+# ========================================================
+# [DRIVER] NEW AES-GCM TRANSACTION (Mode: ENCRYPT)
+# ========================================================
+# ==================================================
+# [DRIVER]
+# Mode        : ENCRYPT
+# Cipher Key  : 00000000000000000000000000000000
+# IV          : 000000000000000000000000
+# AAD Size    : 0 blocks
+# Data In Size: 1 blocks
+#   DATA[0]  : 00000000000000000000000000000000
+# Data Out Sz : 0 blocks
+# Tag Out     : 00000000000000000000000000000000
+# Verify Pass : 0
+# Verify Done : 0
+# CTR Overflow: 0
+# Finish      : 0
+# ==================================================
+# [DRIVER] Waiting KEY_READY...
+# [DRIVER] LOAD_KEY = 00000000000000000000000000000000
+# [FSM TRACE @ 35000 ps] CU Current=KEY_EXPANSION (1), Next=1 | start=1, H_loaded=0, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] Waiting IV_READY...
+# [MONITOR] NEW TRANSACTION | MODE = ENCRYPT
+# [MONITOR] Captured CIPHER_KEY = 00000000000000000000000000000000
+# [DRIVER] LOAD_IV = 000000000000000000000000
+# [DRIVER] Waiting AAD_READY...
+# [MONITOR] Captured IV = 000000000000000000000000
+# [FSM TRACE @ 145000 ps] CU Current=WAIT_H_CAL (2), Next=2 | start=0, H_loaded=0, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [FSM TRACE @ 175000 ps] CU Current=WAIT_AAD (4), Next=4 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] NO AAD (no_AAD = 1)
+# [FSM TRACE @ 195000 ps] CU Current=WAIT_DATA (6), Next=6 | start=0, H_loaded=1, IV_loaded=1, no_AAD=1, AAD_ready=1, data_ready=0
+# [DRIVER] Waiting DATA_READY...
+# [MONITOR] NO AAD
+# [DRIVER] DATA[0] = 00000000000000000000000000000000 | LAST=1
+# [FSM TRACE @ 215000 ps] CU Current=WAIT_PROCESS_FINISH (8), Next=8 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=1
+# [DRIVER] Waiting FINISH from DUT...
+# [MONITOR] DATA_IN[0] = 00000000000000000000000000000000 | LAST=1
+# [MONITOR] INPUT COMPLETE: AAD=0 blocks, DATA=1 blocks
+# [MONITOR] DATA_OUT[0] = 0388dace60b6a392f328c2b971b2fe78 | LAST=1
+# [FSM TRACE @ 375000 ps] CU Current=FINISH (10), Next=10 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [MONITOR] TAG = 2c4fa7cbc8dcac66067fb1a42b88adc8
+# [FSM TRACE @ 385000 ps] CU Current=IDLE (0), Next=0 | start=0, H_loaded=1, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] FINISH detected!
+# ========================================================
+# [DRIVER] TRANSACTION COMPLETED
+# ========================================================
+# [MONITOR] FINISH DETECTED
+# 
+# >>> [TB] RUNNING TEST 2: NIST TC2 DECRYPTION (Valid Tag)...
+# [GENERATOR] Sending directed transaction (Mode: DECRYPT)
+# 
+# ========================================================
+# [DRIVER] NEW AES-GCM TRANSACTION (Mode: DECRYPT)
+# ========================================================
+# ==================================================
+# [DRIVER]
+# Mode        : DECRYPT
+# Cipher Key  : 00000000000000000000000000000000
+# IV          : 000000000000000000000000
+# AAD Size    : 0 blocks
+# Data In Size: 1 blocks
+#   DATA[0]  : 0388dace60b6a392f328c2b971b2fe78
+# Tag Ref     : 2c4fa7cbc8dcac66067fb1a42b88adc8
+# Data Out Sz : 0 blocks
+# Tag Out     : 00000000000000000000000000000000
+# Verify Pass : 0
+# Verify Done : 0
+# CTR Overflow: 0
+# Finish      : 0
+# ==================================================
+# [DRIVER] Waiting KEY_READY...
+# [DRIVER] LOAD_KEY = 00000000000000000000000000000000
+# 
+# ============================================================
+# [MONITOR] TRANSACTION COMPLETE
+# ============================================================
+# [MONITOR] MODE            = ENCRYPT
+# [MONITOR] KEY             = 00000000000000000000000000000000
+# [MONITOR] IV              = 000000000000000000000000
+# [MONITOR] AAD BLOCKS      = 0
+# [MONITOR] DATA IN BLOCKS  = 1
+# [MONITOR] DATA OUT BLOCKS = 1
+# [MONITOR] TAG OUT         = 2c4fa7cbc8dcac66067fb1a42b88adc8
+# [MONITOR] VERIFY DONE     = 0
+# [MONITOR] VERIFY PASS     = 0
+# [MONITOR] FINISH          = 1
+# ============================================================
+# 
+# ==============================================================
+# [SCOREBOARD] VERIFYING TRANSACTION #1 (Mode: ENCRYPT)
+# ==============================================================
+#   [PASS] TAG MATCHED: 2c4fa7cbc8dcac66067fb1a42b88adc8
+# [SCOREBOARD] *** TRANSACTION #1 PASSED ***
+# ==============================================================
+# [FSM TRACE @ 405000 ps] CU Current=KEY_EXPANSION (1), Next=1 | start=1, H_loaded=0, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] Waiting IV_READY...
+# [MONITOR] NEW TRANSACTION | MODE = DECRYPT
+# [MONITOR] Captured CIPHER_KEY = 00000000000000000000000000000000
+# [DRIVER] LOAD_IV = 000000000000000000000000
+# [DRIVER] Waiting TAG_REF_READY...
+# [DRIVER] LOAD_TAG_REF = 2c4fa7cbc8dcac66067fb1a42b88adc8
+# [MONITOR] Captured IV = 000000000000000000000000
+# [DRIVER] Waiting AAD_READY...
+# [MONITOR] Captured TAG_REF = 2c4fa7cbc8dcac66067fb1a42b88adc8
+# [FSM TRACE @ 515000 ps] CU Current=WAIT_H_CAL (2), Next=2 | start=0, H_loaded=0, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [FSM TRACE @ 545000 ps] CU Current=WAIT_AAD (4), Next=4 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] NO AAD (no_AAD = 1)
+# [FSM TRACE @ 565000 ps] CU Current=WAIT_DATA (6), Next=6 | start=0, H_loaded=1, IV_loaded=1, no_AAD=1, AAD_ready=1, data_ready=0
+# [DRIVER] Waiting DATA_READY...
+# [MONITOR] NO AAD
+# [DRIVER] DATA[0] = 0388dace60b6a392f328c2b971b2fe78 | LAST=1
+# [FSM TRACE @ 585000 ps] CU Current=WAIT_PROCESS_FINISH (8), Next=8 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=1
+# [DRIVER] Waiting VERIFY_DONE from DUT...
+# [MONITOR] DATA_IN[0] = 0388dace60b6a392f328c2b971b2fe78 | LAST=1
+# [MONITOR] INPUT COMPLETE: AAD=0 blocks, DATA=1 blocks
+# [MONITOR] DATA_OUT[0] = 00000000000000000000000000000000 | LAST=1
+# [FSM TRACE @ 745000 ps] CU Current=VERIFY_PASS (9), Next=9 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] VERIFY_DONE detected! (verify_pass=1). Asserting VERIFY_CHECKED pulse.
+# [MONITOR] VERIFY_DONE = 1 | VERIFY_PASS = 1
+# [FSM TRACE @ 765000 ps] CU Current=FINISH (10), Next=10 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] Waiting FINISH from DUT...
+# [MONITOR] VERIFY_DONE = 1 | VERIFY_PASS = 1
+# [FSM TRACE @ 775000 ps] CU Current=IDLE (0), Next=0 | start=0, H_loaded=1, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] FINISH detected!
+# ========================================================
+# [DRIVER] TRANSACTION COMPLETED
+# ========================================================
+# [MONITOR] FINISH DETECTED
+# 
+# >>> [TB] RUNNING TEST 3: NIST TC2 DECRYPTION (Tampered Tag)...
+# [GENERATOR] Sending directed transaction (Mode: DECRYPT)
+# 
+# ========================================================
+# [DRIVER] NEW AES-GCM TRANSACTION (Mode: DECRYPT)
+# ========================================================
+# ==================================================
+# [DRIVER]
+# Mode        : DECRYPT
+# Cipher Key  : 00000000000000000000000000000000
+# IV          : 000000000000000000000000
+# AAD Size    : 0 blocks
+# Data In Size: 1 blocks
+#   DATA[0]  : 0388dace60b6a392f328c2b971b2fe78
+# Tag Ref     : deadbeefdeadbeefdeadbeefdeadbeef
+# Data Out Sz : 0 blocks
+# Tag Out     : 00000000000000000000000000000000
+# Verify Pass : 0
+# Verify Done : 0
+# CTR Overflow: 0
+# Finish      : 0
+# ==================================================
+# [DRIVER] Waiting KEY_READY...
+# [DRIVER] LOAD_KEY = 00000000000000000000000000000000
+# 
+# ============================================================
+# [MONITOR] TRANSACTION COMPLETE
+# ============================================================
+# [MONITOR] MODE            = DECRYPT
+# [MONITOR] KEY             = 00000000000000000000000000000000
+# [MONITOR] IV              = 000000000000000000000000
+# [MONITOR] TAG_REF         = 2c4fa7cbc8dcac66067fb1a42b88adc8
+# [MONITOR] AAD BLOCKS      = 0
+# [MONITOR] DATA IN BLOCKS  = 1
+# [MONITOR] DATA OUT BLOCKS = 1
+# [MONITOR] TAG OUT         = 00000000000000000000000000000000
+# [MONITOR] VERIFY DONE     = 1
+# [MONITOR] VERIFY PASS     = 1
+# [MONITOR] FINISH          = 1
+# ============================================================
+# 
+# ==============================================================
+# [SCOREBOARD] VERIFYING TRANSACTION #2 (Mode: DECRYPT)
+# ==============================================================
+#   [PASS] VERIFY_PASS MATCHED: 1 (exp_pass=1, verify_done=1)
+# [SCOREBOARD] *** TRANSACTION #2 PASSED ***
+# ==============================================================
+# [FSM TRACE @ 795000 ps] CU Current=KEY_EXPANSION (1), Next=1 | start=1, H_loaded=0, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] Waiting IV_READY...
+# [MONITOR] NEW TRANSACTION | MODE = DECRYPT
+# [MONITOR] Captured CIPHER_KEY = 00000000000000000000000000000000
+# [DRIVER] LOAD_IV = 000000000000000000000000
+# [DRIVER] Waiting TAG_REF_READY...
+# [DRIVER] LOAD_TAG_REF = deadbeefdeadbeefdeadbeefdeadbeef
+# [MONITOR] Captured IV = 000000000000000000000000
+# [DRIVER] Waiting AAD_READY...
+# [MONITOR] Captured TAG_REF = deadbeefdeadbeefdeadbeefdeadbeef
+# [FSM TRACE @ 905000 ps] CU Current=WAIT_H_CAL (2), Next=2 | start=0, H_loaded=0, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [FSM TRACE @ 935000 ps] CU Current=WAIT_AAD (4), Next=4 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] NO AAD (no_AAD = 1)
+# [FSM TRACE @ 955000 ps] CU Current=WAIT_DATA (6), Next=6 | start=0, H_loaded=1, IV_loaded=1, no_AAD=1, AAD_ready=1, data_ready=0
+# [DRIVER] Waiting DATA_READY...
+# [MONITOR] NO AAD
+# [DRIVER] DATA[0] = 0388dace60b6a392f328c2b971b2fe78 | LAST=1
+# [FSM TRACE @ 975000 ps] CU Current=WAIT_PROCESS_FINISH (8), Next=8 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=1
+# [DRIVER] Waiting VERIFY_DONE from DUT...
+# [MONITOR] DATA_IN[0] = 0388dace60b6a392f328c2b971b2fe78 | LAST=1
+# [MONITOR] INPUT COMPLETE: AAD=0 blocks, DATA=1 blocks
+# [MONITOR] DATA_OUT[0] = 00000000000000000000000000000000 | LAST=1
+# [FSM TRACE @ 1135000 ps] CU Current=VERIFY_PASS (9), Next=9 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] VERIFY_DONE detected! (verify_pass=0). Asserting VERIFY_CHECKED pulse.
+# [MONITOR] VERIFY_DONE = 1 | VERIFY_PASS = 0
+# [FSM TRACE @ 1155000 ps] CU Current=FINISH (10), Next=10 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] Waiting FINISH from DUT...
+# [MONITOR] VERIFY_DONE = 1 | VERIFY_PASS = 0
+# [FSM TRACE @ 1165000 ps] CU Current=IDLE (0), Next=0 | start=0, H_loaded=1, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] FINISH detected!
+# ========================================================
+# [DRIVER] TRANSACTION COMPLETED
+# ========================================================
+# [MONITOR] FINISH DETECTED
+# 
+# >>> [TB] RUNNING TEST 4: RANDOM CONSTRAINED TRANSACTIONS (3 items)...
+# [GENERATOR] Generated transaction #1 (Mode: ENCRYPT, Data blocks: 12)
+# 
+# ========================================================
+# [DRIVER] NEW AES-GCM TRANSACTION (Mode: ENCRYPT)
+# ========================================================
+# ==================================================
+# [DRIVER]
+# Mode        : ENCRYPT
+# Cipher Key  : e5b9ef30053c2152c8696b885eb8b1d1
+# IV          : af835ca911483bb5af6879de
+# AAD Size    : 8 blocks
+#   AAD[0]   : a8592e2c6336680ce7e8c91d6b6a43b1
+#   AAD[1]   : e1ab3d36dec57eccc28b588a11b0f2e0
+#   AAD[2]   : 26068024edf14f3fbed1b9abbd0b6b55
+#   AAD[3]   : 29cf84c21e8569fd1f30a80521818509
+#   AAD[4]   : bfff778cf465eb3d0631d17201fcb2c9
+#   AAD[5]   : 53fcc6eeb9f2904697182350fbf17b99
+#   AAD[6]   : cdd8b9b57df5a2ee260e29c1d7ae3912
+#   AAD[7]   : 92d7de1cb616da92a777bd633ea8a5db
+# Data In Size: 12 blocks
+#   DATA[0]  : 76fa198fe5aa0309e25113dd4ee3708d
+#   DATA[1]  : 417f189923fb64b0a1a5c31acb9fd9dd
+#   DATA[2]  : c1d3332f3cd36f4b1e2da0abcc88badc
+#   DATA[3]  : abd235cb1cf37578e61f586cf51257c5
+#   DATA[4]  : 2df52dba7b0d5ffd7f37225054a2ae2b
+#   DATA[5]  : 999eb8f1c69de09feed528d1947e8e81
+#   DATA[6]  : 43f6e83fe10b48560dfee445dc6f5fa2
+#   DATA[7]  : cd269e79c66e6c4a6d1cd4832255e3be
+#   DATA[8]  : 96880c4a9d507b96e8772d4a607260e5
+#   DATA[9]  : d0e24f8b76ff6313b974fd1a21928fce
+#   DATA[10]  : dee0f8d4442fddab2ea0536b573359c8
+#   DATA[11]  : dfa5e15af3045e63e49ca6463c60a78d
+# Data Out Sz : 0 blocks
+# Tag Out     : 00000000000000000000000000000000
+# Verify Pass : 0
+# Verify Done : 0
+# CTR Overflow: 0
+# Finish      : 0
+# ==================================================
+# [DRIVER] Waiting KEY_READY...
+# [DRIVER] LOAD_KEY = e5b9ef30053c2152c8696b885eb8b1d1
+# 
+# ============================================================
+# [MONITOR] TRANSACTION COMPLETE
+# ============================================================
+# [MONITOR] MODE            = DECRYPT
+# [MONITOR] KEY             = 00000000000000000000000000000000
+# [MONITOR] IV              = 000000000000000000000000
+# [MONITOR] TAG_REF         = deadbeefdeadbeefdeadbeefdeadbeef
+# [MONITOR] AAD BLOCKS      = 0
+# [MONITOR] DATA IN BLOCKS  = 1
+# [MONITOR] DATA OUT BLOCKS = 1
+# [MONITOR] TAG OUT         = 00000000000000000000000000000000
+# [MONITOR] VERIFY DONE     = 1
+# [MONITOR] VERIFY PASS     = 0
+# [MONITOR] FINISH          = 1
+# ============================================================
+# 
+# ==============================================================
+# [SCOREBOARD] VERIFYING TRANSACTION #3 (Mode: DECRYPT)
+# ==============================================================
+#   [PASS] VERIFY_PASS MATCHED: 0 (exp_pass=0, verify_done=1)
+# [SCOREBOARD] *** TRANSACTION #3 PASSED ***
+# ==============================================================
+# [FSM TRACE @ 1185000 ps] CU Current=KEY_EXPANSION (1), Next=1 | start=1, H_loaded=0, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] Waiting IV_READY...
+# [MONITOR] NEW TRANSACTION | MODE = ENCRYPT
+# [MONITOR] Captured CIPHER_KEY = e5b9ef30053c2152c8696b885eb8b1d1
+# [DRIVER] LOAD_IV = af835ca911483bb5af6879de
+# [DRIVER] Waiting AAD_READY...
+# [MONITOR] Captured IV = af835ca911483bb5af6879de
+# [FSM TRACE @ 1295000 ps] CU Current=WAIT_H_CAL (2), Next=2 | start=0, H_loaded=0, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [FSM TRACE @ 1325000 ps] CU Current=WAIT_AAD (4), Next=4 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] AAD[0] = a8592e2c6336680ce7e8c91d6b6a43b1 | LAST=0
+# [FSM TRACE @ 1345000 ps] CU Current=LOAD_AAD (5), Next=5 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=1, data_ready=0
+# [DRIVER] AAD[1] = e1ab3d36dec57eccc28b588a11b0f2e0 | LAST=0
+# [MONITOR] AAD[0] = a8592e2c6336680ce7e8c91d6b6a43b1 | LAST=0
+# [DRIVER] AAD[2] = 26068024edf14f3fbed1b9abbd0b6b55 | LAST=0
+# [MONITOR] AAD[1] = e1ab3d36dec57eccc28b588a11b0f2e0 | LAST=0
+# [DRIVER] AAD[3] = 29cf84c21e8569fd1f30a80521818509 | LAST=0
+# [MONITOR] AAD[2] = 26068024edf14f3fbed1b9abbd0b6b55 | LAST=0
+# [DRIVER] AAD[4] = bfff778cf465eb3d0631d17201fcb2c9 | LAST=0
+# [MONITOR] AAD[3] = 29cf84c21e8569fd1f30a80521818509 | LAST=0
+# [DRIVER] AAD[5] = 53fcc6eeb9f2904697182350fbf17b99 | LAST=0
+# [MONITOR] AAD[4] = bfff778cf465eb3d0631d17201fcb2c9 | LAST=0
+# [DRIVER] AAD[6] = cdd8b9b57df5a2ee260e29c1d7ae3912 | LAST=0
+# [MONITOR] AAD[5] = 53fcc6eeb9f2904697182350fbf17b99 | LAST=0
+# [DRIVER] AAD[7] = 92d7de1cb616da92a777bd633ea8a5db | LAST=1
+# [MONITOR] AAD[6] = cdd8b9b57df5a2ee260e29c1d7ae3912 | LAST=0
+# [FSM TRACE @ 1415000 ps] CU Current=WAIT_DATA (6), Next=6 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=1, data_ready=0
+# [DRIVER] Waiting DATA_READY...
+# [MONITOR] AAD[7] = 92d7de1cb616da92a777bd633ea8a5db | LAST=1
+# [DRIVER] DATA[0] = 76fa198fe5aa0309e25113dd4ee3708d | LAST=0
+# [FSM TRACE @ 1435000 ps] CU Current=LOAD_DATA (7), Next=7 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=1
+# [DRIVER] DATA[1] = 417f189923fb64b0a1a5c31acb9fd9dd | LAST=0
+# [MONITOR] DATA_IN[0] = 76fa198fe5aa0309e25113dd4ee3708d | LAST=0
+# [DRIVER] DATA[2] = c1d3332f3cd36f4b1e2da0abcc88badc | LAST=0
+# [MONITOR] DATA_IN[1] = 417f189923fb64b0a1a5c31acb9fd9dd | LAST=0
+# [DRIVER] DATA[3] = abd235cb1cf37578e61f586cf51257c5 | LAST=0
+# [MONITOR] DATA_IN[2] = c1d3332f3cd36f4b1e2da0abcc88badc | LAST=0
+# [DRIVER] DATA[4] = 2df52dba7b0d5ffd7f37225054a2ae2b | LAST=0
+# [MONITOR] DATA_IN[3] = abd235cb1cf37578e61f586cf51257c5 | LAST=0
+# [DRIVER] DATA[5] = 999eb8f1c69de09feed528d1947e8e81 | LAST=0
+# [MONITOR] DATA_IN[4] = 2df52dba7b0d5ffd7f37225054a2ae2b | LAST=0
+# [DRIVER] DATA[6] = 43f6e83fe10b48560dfee445dc6f5fa2 | LAST=0
+# [MONITOR] DATA_IN[5] = 999eb8f1c69de09feed528d1947e8e81 | LAST=0
+# [DRIVER] DATA[7] = cd269e79c66e6c4a6d1cd4832255e3be | LAST=0
+# [MONITOR] DATA_IN[6] = 43f6e83fe10b48560dfee445dc6f5fa2 | LAST=0
+# [DRIVER] DATA[8] = 96880c4a9d507b96e8772d4a607260e5 | LAST=0
+# [MONITOR] DATA_IN[7] = cd269e79c66e6c4a6d1cd4832255e3be | LAST=0
+# [DRIVER] DATA[9] = d0e24f8b76ff6313b974fd1a21928fce | LAST=0
+# [MONITOR] DATA_IN[8] = 96880c4a9d507b96e8772d4a607260e5 | LAST=0
+# [DRIVER] DATA[10] = dee0f8d4442fddab2ea0536b573359c8 | LAST=0
+# [MONITOR] DATA_IN[9] = d0e24f8b76ff6313b974fd1a21928fce | LAST=0
+# [DRIVER] DATA[11] = dfa5e15af3045e63e49ca6463c60a78d | LAST=1
+# [MONITOR] DATA_IN[10] = dee0f8d4442fddab2ea0536b573359c8 | LAST=0
+# [FSM TRACE @ 1545000 ps] CU Current=WAIT_PROCESS_FINISH (8), Next=8 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=1
+# [DRIVER] Waiting FINISH from DUT...
+# [MONITOR] DATA_IN[11] = dfa5e15af3045e63e49ca6463c60a78d | LAST=1
+# [MONITOR] INPUT COMPLETE: AAD=8 blocks, DATA=12 blocks
+# [MONITOR] DATA_OUT[0] = 785b9a9d238a5caacb543935c0882d91 | LAST=0
+# [MONITOR] DATA_OUT[1] = 331e880a776cfbf49b2e4b305723d36e | LAST=0
+# [MONITOR] DATA_OUT[2] = 8ed610c1dcd4a05133146fc2ee5ae82a | LAST=0
+# [MONITOR] DATA_OUT[3] = fac7b2a64be49cda9a9499430a9ab39f | LAST=0
+# [MONITOR] DATA_OUT[4] = e1df18be0be0cc25e2bb028730b35bfd | LAST=0
+# [MONITOR] DATA_OUT[5] = 3d8bfa3c4496b7d8f9aa2295ebe6d9d8 | LAST=0
+# [MONITOR] DATA_OUT[6] = edd0f2800de96ed63c77b9f48b032f37 | LAST=0
+# [MONITOR] DATA_OUT[7] = ef7a8a3da74bc9e6b7fb72e7d964a43c | LAST=0
+# [MONITOR] DATA_OUT[8] = 89e4716028f0798f2c79b8237a34dc50 | LAST=0
+# [MONITOR] DATA_OUT[9] = d229080fb886bd7eee00a29007ca12b9 | LAST=0
+# [MONITOR] DATA_OUT[10] = cdb0872d2f8c7432fbab8ac3aad4579b | LAST=0
+# [MONITOR] DATA_OUT[11] = 95829d3bc616be19d79350d70542799f | LAST=1
+# [FSM TRACE @ 1705000 ps] CU Current=FINISH (10), Next=10 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [MONITOR] TAG = 45a08a6b200e18ef7e24474c648bd077
+# [FSM TRACE @ 1715000 ps] CU Current=IDLE (0), Next=0 | start=0, H_loaded=1, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] FINISH detected!
+# ========================================================
+# [DRIVER] TRANSACTION COMPLETED
+# ========================================================
+# [MONITOR] FINISH DETECTED
+# [GENERATOR] Generated transaction #2 (Mode: DECRYPT, Data blocks: 2)
+# 
+# ========================================================
+# [DRIVER] NEW AES-GCM TRANSACTION (Mode: DECRYPT)
+# ========================================================
+# ==================================================
+# [DRIVER]
+# Mode        : DECRYPT
+# Cipher Key  : 019375304a0c20a250738b7d159a8dd2
+# IV          : 0f8950b143ba4f58294686af
+# AAD Size    : 5 blocks
+#   AAD[0]   : fb3cc47fb98e91129c12b55a8960604c
+#   AAD[1]   : 7beb3a1f7ec3b00a1a984ead2df56869
+#   AAD[2]   : f68722ba06b865fc4944d02a21b44e0b
+#   AAD[3]   : aa0824cc496711b2b6a4763ab8b6035b
+#   AAD[4]   : 742ac12fa759d04d4543fcb61cf97949
+# Data In Size: 2 blocks
+#   DATA[0]  : d35f26c61bfb7f6d400dc5380a63040b
+#   DATA[1]  : 787ea210db6853aa4df0a51629ff5585
+# Tag Ref     : 77294a5c8335310579b11b0e8a18fe33
+# Data Out Sz : 0 blocks
+# Tag Out     : 00000000000000000000000000000000
+# Verify Pass : 0
+# Verify Done : 0
+# CTR Overflow: 0
+# Finish      : 0
+# ==================================================
+# [DRIVER] Waiting KEY_READY...
+# [DRIVER] LOAD_KEY = 019375304a0c20a250738b7d159a8dd2
+# 
+# ============================================================
+# [MONITOR] TRANSACTION COMPLETE
+# ============================================================
+# [MONITOR] MODE            = ENCRYPT
+# [MONITOR] KEY             = e5b9ef30053c2152c8696b885eb8b1d1
+# [MONITOR] IV              = af835ca911483bb5af6879de
+# [MONITOR] AAD BLOCKS      = 8
+# [MONITOR] DATA IN BLOCKS  = 12
+# [MONITOR] DATA OUT BLOCKS = 12
+# [MONITOR] TAG OUT         = 45a08a6b200e18ef7e24474c648bd077
+# [MONITOR] VERIFY DONE     = 0
+# [MONITOR] VERIFY PASS     = 0
+# [MONITOR] FINISH          = 1
+# ============================================================
+# 
+# ==============================================================
+# [SCOREBOARD] VERIFYING TRANSACTION #4 (Mode: ENCRYPT)
+# ==============================================================
+#   [PASS] TAG MATCHED: 45a08a6b200e18ef7e24474c648bd077
+# [SCOREBOARD] *** TRANSACTION #4 PASSED ***
+# ==============================================================
+# [FSM TRACE @ 1735000 ps] CU Current=KEY_EXPANSION (1), Next=1 | start=1, H_loaded=0, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] Waiting IV_READY...
+# [MONITOR] NEW TRANSACTION | MODE = DECRYPT
+# [MONITOR] Captured CIPHER_KEY = 019375304a0c20a250738b7d159a8dd2
+# [DRIVER] LOAD_IV = 0f8950b143ba4f58294686af
+# [DRIVER] Waiting TAG_REF_READY...
+# [DRIVER] LOAD_TAG_REF = 77294a5c8335310579b11b0e8a18fe33
+# [MONITOR] Captured IV = 0f8950b143ba4f58294686af
+# [DRIVER] Waiting AAD_READY...
+# [MONITOR] Captured TAG_REF = 77294a5c8335310579b11b0e8a18fe33
+# [FSM TRACE @ 1845000 ps] CU Current=WAIT_H_CAL (2), Next=2 | start=0, H_loaded=0, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [FSM TRACE @ 1875000 ps] CU Current=WAIT_AAD (4), Next=4 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] AAD[0] = fb3cc47fb98e91129c12b55a8960604c | LAST=0
+# [FSM TRACE @ 1895000 ps] CU Current=LOAD_AAD (5), Next=5 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=1, data_ready=0
+# [DRIVER] AAD[1] = 7beb3a1f7ec3b00a1a984ead2df56869 | LAST=0
+# [MONITOR] AAD[0] = fb3cc47fb98e91129c12b55a8960604c | LAST=0
+# [DRIVER] AAD[2] = f68722ba06b865fc4944d02a21b44e0b | LAST=0
+# [MONITOR] AAD[1] = 7beb3a1f7ec3b00a1a984ead2df56869 | LAST=0
+# [DRIVER] AAD[3] = aa0824cc496711b2b6a4763ab8b6035b | LAST=0
+# [MONITOR] AAD[2] = f68722ba06b865fc4944d02a21b44e0b | LAST=0
+# [DRIVER] AAD[4] = 742ac12fa759d04d4543fcb61cf97949 | LAST=1
+# [MONITOR] AAD[3] = aa0824cc496711b2b6a4763ab8b6035b | LAST=0
+# [FSM TRACE @ 1935000 ps] CU Current=WAIT_DATA (6), Next=6 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=1, data_ready=0
+# [DRIVER] Waiting DATA_READY...
+# [MONITOR] AAD[4] = 742ac12fa759d04d4543fcb61cf97949 | LAST=1
+# [DRIVER] DATA[0] = d35f26c61bfb7f6d400dc5380a63040b | LAST=0
+# [FSM TRACE @ 1955000 ps] CU Current=LOAD_DATA (7), Next=7 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=1
+# [DRIVER] DATA[1] = 787ea210db6853aa4df0a51629ff5585 | LAST=1
+# [MONITOR] DATA_IN[0] = d35f26c61bfb7f6d400dc5380a63040b | LAST=0
+# [FSM TRACE @ 1965000 ps] CU Current=WAIT_PROCESS_FINISH (8), Next=8 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=1
+# [DRIVER] Waiting VERIFY_DONE from DUT...
+# [MONITOR] DATA_IN[1] = 787ea210db6853aa4df0a51629ff5585 | LAST=1
+# [MONITOR] INPUT COMPLETE: AAD=5 blocks, DATA=2 blocks
+# [MONITOR] DATA_OUT[0] = 9c8fcb36675f38d42df847826286cf0f | LAST=0
+# [MONITOR] DATA_OUT[1] = c124514cf1a7909a2d81deb3745535e5 | LAST=1
+# [FSM TRACE @ 2125000 ps] CU Current=VERIFY_PASS (9), Next=9 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] VERIFY_DONE detected! (verify_pass=0). Asserting VERIFY_CHECKED pulse.
+# [MONITOR] VERIFY_DONE = 1 | VERIFY_PASS = 0
+# [FSM TRACE @ 2145000 ps] CU Current=FINISH (10), Next=10 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] Waiting FINISH from DUT...
+# [MONITOR] VERIFY_DONE = 1 | VERIFY_PASS = 0
+# [FSM TRACE @ 2155000 ps] CU Current=IDLE (0), Next=0 | start=0, H_loaded=1, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] FINISH detected!
+# ========================================================
+# [DRIVER] TRANSACTION COMPLETED
+# ========================================================
+# [MONITOR] FINISH DETECTED
+# [GENERATOR] Generated transaction #3 (Mode: ENCRYPT, Data blocks: 6)
+# 
+# ========================================================
+# [DRIVER] NEW AES-GCM TRANSACTION (Mode: ENCRYPT)
+# ========================================================
+# ==================================================
+# [DRIVER]
+# Mode        : ENCRYPT
+# Cipher Key  : 4df82d7e997818f695da1ff35c20ccf1
+# IV          : d9b2b6303e678c37045c5aac
+# AAD Size    : 4 blocks
+#   AAD[0]   : 6722e8add5b2152f745c33cfd45c9d06
+#   AAD[1]   : 843a711141d2792caf850e786d782f76
+#   AAD[2]   : 171f8ea078e80fbb2c07915f1cb461eb
+#   AAD[3]   : a119a3c4fa76c1fb59c386729f8ec9be
+# Data In Size: 6 blocks
+#   DATA[0]  : f13e75696c692bd2b85977b921dec982
+#   DATA[1]  : 106324c4cccd89949385740f8729adc9
+#   DATA[2]  : e8a2e69408413626607804d56b814f7c
+#   DATA[3]  : b788b5d7c9d07f8d7f950f4653284c9b
+#   DATA[4]  : 918195e9a6ae33dbca4b8cdc2a96f9e3
+#   DATA[5]  : ea698430bda49b12f3814e397ba8e035
+# Data Out Sz : 0 blocks
+# Tag Out     : 00000000000000000000000000000000
+# Verify Pass : 0
+# Verify Done : 0
+# CTR Overflow: 0
+# Finish      : 0
+# ==================================================
+# [DRIVER] Waiting KEY_READY...
+# [DRIVER] LOAD_KEY = 4df82d7e997818f695da1ff35c20ccf1
+# 
+# ============================================================
+# [MONITOR] TRANSACTION COMPLETE
+# ============================================================
+# [MONITOR] MODE            = DECRYPT
+# [MONITOR] KEY             = 019375304a0c20a250738b7d159a8dd2
+# [MONITOR] IV              = 0f8950b143ba4f58294686af
+# [MONITOR] TAG_REF         = 77294a5c8335310579b11b0e8a18fe33
+# [MONITOR] AAD BLOCKS      = 5
+# [MONITOR] DATA IN BLOCKS  = 2
+# [MONITOR] DATA OUT BLOCKS = 2
+# [MONITOR] TAG OUT         = 00000000000000000000000000000000
+# [MONITOR] VERIFY DONE     = 1
+# [MONITOR] VERIFY PASS     = 0
+# [MONITOR] FINISH          = 1
+# ============================================================
+# 
+# ==============================================================
+# [SCOREBOARD] VERIFYING TRANSACTION #5 (Mode: DECRYPT)
+# ==============================================================
+#   [PASS] VERIFY_PASS MATCHED: 0 (exp_pass=0, verify_done=1)
+# [SCOREBOARD] *** TRANSACTION #5 PASSED ***
+# ==============================================================
+# [FSM TRACE @ 2175000 ps] CU Current=KEY_EXPANSION (1), Next=1 | start=1, H_loaded=0, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] Waiting IV_READY...
+# [MONITOR] NEW TRANSACTION | MODE = ENCRYPT
+# [MONITOR] Captured CIPHER_KEY = 4df82d7e997818f695da1ff35c20ccf1
+# [DRIVER] LOAD_IV = d9b2b6303e678c37045c5aac
+# [DRIVER] Waiting AAD_READY...
+# [MONITOR] Captured IV = d9b2b6303e678c37045c5aac
+# [FSM TRACE @ 2285000 ps] CU Current=WAIT_H_CAL (2), Next=2 | start=0, H_loaded=0, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [FSM TRACE @ 2315000 ps] CU Current=WAIT_AAD (4), Next=4 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] AAD[0] = 6722e8add5b2152f745c33cfd45c9d06 | LAST=0
+# [FSM TRACE @ 2335000 ps] CU Current=LOAD_AAD (5), Next=5 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=1, data_ready=0
+# [DRIVER] AAD[1] = 843a711141d2792caf850e786d782f76 | LAST=0
+# [MONITOR] AAD[0] = 6722e8add5b2152f745c33cfd45c9d06 | LAST=0
+# [DRIVER] AAD[2] = 171f8ea078e80fbb2c07915f1cb461eb | LAST=0
+# [MONITOR] AAD[1] = 843a711141d2792caf850e786d782f76 | LAST=0
+# [DRIVER] AAD[3] = a119a3c4fa76c1fb59c386729f8ec9be | LAST=1
+# [MONITOR] AAD[2] = 171f8ea078e80fbb2c07915f1cb461eb | LAST=0
+# [FSM TRACE @ 2365000 ps] CU Current=WAIT_DATA (6), Next=6 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=1, data_ready=0
+# [DRIVER] Waiting DATA_READY...
+# [MONITOR] AAD[3] = a119a3c4fa76c1fb59c386729f8ec9be | LAST=1
+# [DRIVER] DATA[0] = f13e75696c692bd2b85977b921dec982 | LAST=0
+# [FSM TRACE @ 2385000 ps] CU Current=LOAD_DATA (7), Next=7 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=1
+# [DRIVER] DATA[1] = 106324c4cccd89949385740f8729adc9 | LAST=0
+# [MONITOR] DATA_IN[0] = f13e75696c692bd2b85977b921dec982 | LAST=0
+# [DRIVER] DATA[2] = e8a2e69408413626607804d56b814f7c | LAST=0
+# [MONITOR] DATA_IN[1] = 106324c4cccd89949385740f8729adc9 | LAST=0
+# [DRIVER] DATA[3] = b788b5d7c9d07f8d7f950f4653284c9b | LAST=0
+# [MONITOR] DATA_IN[2] = e8a2e69408413626607804d56b814f7c | LAST=0
+# [DRIVER] DATA[4] = 918195e9a6ae33dbca4b8cdc2a96f9e3 | LAST=0
+# [MONITOR] DATA_IN[3] = b788b5d7c9d07f8d7f950f4653284c9b | LAST=0
+# [DRIVER] DATA[5] = ea698430bda49b12f3814e397ba8e035 | LAST=1
+# [MONITOR] DATA_IN[4] = 918195e9a6ae33dbca4b8cdc2a96f9e3 | LAST=0
+# [FSM TRACE @ 2435000 ps] CU Current=WAIT_PROCESS_FINISH (8), Next=8 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=1
+# [DRIVER] Waiting FINISH from DUT...
+# [MONITOR] DATA_IN[5] = ea698430bda49b12f3814e397ba8e035 | LAST=1
+# [MONITOR] INPUT COMPLETE: AAD=4 blocks, DATA=6 blocks
+# [MONITOR] DATA_OUT[0] = 43735e3ad4f11166da98d6e8b4cd043d | LAST=0
+# [MONITOR] DATA_OUT[1] = 6e762ee81d17b39f32f5375b718efa94 | LAST=0
+# [MONITOR] DATA_OUT[2] = b1cf6242c7381774f610ce4d40095eea | LAST=0
+# [MONITOR] DATA_OUT[3] = a084e2a615b4c5d142bbbd5e81d6acb6 | LAST=0
+# [MONITOR] DATA_OUT[4] = 0f99780213acdefb088e331591cb42df | LAST=0
+# [MONITOR] DATA_OUT[5] = 62804edd47d11e57d66db7c04c5a1f7e | LAST=1
+# [FSM TRACE @ 2595000 ps] CU Current=FINISH (10), Next=10 | start=0, H_loaded=1, IV_loaded=1, no_AAD=0, AAD_ready=0, data_ready=0
+# [MONITOR] TAG = a36b6ba5cde443e5c7934d773ded1059
+# [FSM TRACE @ 2605000 ps] CU Current=IDLE (0), Next=0 | start=0, H_loaded=1, IV_loaded=0, no_AAD=0, AAD_ready=0, data_ready=0
+# [DRIVER] FINISH detected!
+# ========================================================
+# [DRIVER] TRANSACTION COMPLETED
+# ========================================================
+# [MONITOR] FINISH DETECTED
+# 
+# ============================================================
+# [MONITOR] TRANSACTION COMPLETE
+# ============================================================
+# [MONITOR] MODE            = ENCRYPT
+# [MONITOR] KEY             = 4df82d7e997818f695da1ff35c20ccf1
+# [MONITOR] IV              = d9b2b6303e678c37045c5aac
+# [MONITOR] AAD BLOCKS      = 4
+# [MONITOR] DATA IN BLOCKS  = 6
+# [MONITOR] DATA OUT BLOCKS = 6
+# [MONITOR] TAG OUT         = a36b6ba5cde443e5c7934d773ded1059
+# [MONITOR] VERIFY DONE     = 0
+# [MONITOR] VERIFY PASS     = 0
+# [MONITOR] FINISH          = 1
+# ============================================================
+# 
+# ==============================================================
+# [SCOREBOARD] VERIFYING TRANSACTION #6 (Mode: ENCRYPT)
+# ==============================================================
+#   [PASS] TAG MATCHED: a36b6ba5cde443e5c7934d773ded1059
+# [SCOREBOARD] *** TRANSACTION #6 PASSED ***
+# ==============================================================
+# 
+##############################################################
+#               FINAL SCOREBOARD VERIFICATION REPORT            
+##############################################################
+#  Total Transactions Tested : 6
+#  Passed Transactions       : 6
+#  Failed Transactions       : 0
+#  RESULT: ALL TESTS PASSED SUCCESSFULLY! (100% MATCH)
+##############################################################
+# ==================================================================
+#   ALL VERIFICATION TESTS FINISHED! SIMULATION COMPLETE            
+# ==================================================================
+# ** Note: $finish    : ../dv/tb/tb_top.sv(165)
+#    Time: 2805 ns  Iteration: 0  Instance: /tb_top
+# End time: 01:14:41 on Oct 10,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
